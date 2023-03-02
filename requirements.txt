@@ -5,6 +5,7 @@ Django
 django-autoslug==1.9.8
 django-ckeditor==6.5.1
 django-js-asset==2.0.0
+gunicorn
 idna==3.4
 mysqlclient
 Pillow==9.3.0
