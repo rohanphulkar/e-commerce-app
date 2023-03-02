@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %} {% block title %} {{product.name}} {% endblock title %} 
+{%block body %}
+<section class="text-gray-700 body-font overflow-hidden bg-white">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-4/5 mx-auto flex flex-wrap md:justify-center">
+        <img alt="ecommerce" class="lg:w-auto w-full max-h-auto  rounded border border-gray-200" src="{{product.image.url}}">
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <h1 class="text-gray-900 capitalize text-3xl title-font font-bold mb-6">{{product.name}}</h1>
+          <p class="leading-relaxed tracking-wider">{{product.description}}</p>
+          <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"> 
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="title-font font-medium text-2xl text-gray-900">&#x20b9;{{product.price}}</span>
+            <a href={% url 'add_to_cart' product.id %}><button class="flex ml-auto text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded-full">Buy Now</button>
+          </a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+{% endblock body %}

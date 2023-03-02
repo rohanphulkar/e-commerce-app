@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Account 
+{% endblock title %} {%block body %}
+
+<div class="bg-white py-6 sm:py-8 lg:py-12">
+    
+    <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+        <div class="grid grid-cols-1  gap-4 lg:gap-8 mb-10">
+            <!-- person - start -->
+            <div class="flex flex-col items-center bg-gray-100 rounded-lg p-4 lg:p-8">
+              <div class="w-24 md:w-32 h-24 md:h-32  rounded-full overflow-hidden shadow-lg mb-2 md:mb-4">
+                <img src="{% if user.image %}{{user.image.url}}{% else %}{% static 'img/profile.svg' %}{% endif %}" loading="lazy" alt="Photo by Radu Florin" class="w-full h-full object-cover object-center" />
+              </div>
+      
+              <div>
+                <div class="text-indigo-500 md:text-lg font-bold text-center">{% if user.first_name and user.last_name  %}{{user.first_name}} {{user.last_name}}{% elif user.first_name %}{{user.first_name}}{% else %}No Name{% endif %}</div>
+                <p class="text-gray-700 font-medium text-sm md:text-base text-center mb-3 md:mb-4">{{user.email}}</p>
+              </div>
+            </div>
+            <!-- person - end -->
+          </div>
+      <!-- text - start -->
+      <div class="mb-10 md:mb-16">
+        <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Orders</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
+        <!-- article - start -->
+        {% for order in orders %}
+        <div class="flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
+          <p class="group w-full md:w-32 lg:w-40 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden ">
+            <img src="{{order.product.image.url}}" loading="lazy" alt="{{order.product.name}}" class="w-full h-full object-contain object-center transition duration-200" />
+          </p>
+  
+          <div class="flex flex-col gap-2 p-4 lg:p-6">
+            <span class="text-gray-400 text-sm">{{order.created}}</span>
+  
+            <h2 class="text-gray-800 text-xl font-bold">
+              <p class="hover:text-indigo-500 active:text-indigo-600 transition duration-100 capitalize">{{order.product.name}}</p>
+            </h2>
+  
+            <p class="text-gray-500"><span class="text-gray-700 font-medium">Address :</span> <br/>{{order.address}}</p>
+          </div>
+        </div>
+       {% endfor %}
+        <!-- article - end -->
+  
+       
+      </div>
+    </div>
+  </div>
+{% endblock body %}

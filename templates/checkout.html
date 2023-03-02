@@ -1,0 +1,203 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Checkout 
+{%endblock title %} {%block body %}
+<section class="w-full">
+  <div class="mx-auto max-w-4xl">
+    <div class="">
+      <div class="w-full">
+        <div
+          class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24"
+        >
+          <h4 class="w-full text-3xl font-bold">Chekout</h4>
+          <form class="w-full mt-10 space-y-8" method="POST" action="" >{% csrf_token %}
+            <div class="flex items-center gap-x-7">
+              <div class="w-1/2">
+                <label class="font-medium text-gray-900">Name</label>
+                <input
+                  name="name"
+                  type="text"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                  placeholder="Enter Your Name"
+                />
+              </div>
+              <div class="w-1/2">
+                <label class="font-medium text-gray-900">Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                  placeholder="Enter Your Email Address"
+                />
+              </div>
+            </div>
+            <div class="flex items-center gap-x-7">
+              <div class="w-1/2">
+                <label class="font-medium text-gray-900">Phone</label>
+                <input
+                  name="phone"
+                  type="tel"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="">
+                <label class="font-medium text-gray-900">Pin Code</label>
+                <input
+                  name="pin"
+                  type="text"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                  placeholder="Pin Code"
+                />
+              </div>
+            </div>
+            <div class="">
+              <label class="font-medium text-gray-900">Address</label>
+              <input
+                name="address"
+                type="text"
+                class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                data-primary="blue-600"
+                data-rounded="rounded-lg"
+                placeholder="Address"
+              />
+            </div>
+            <div class="flex items-center gap-x-7">
+              <div class="w-1/2">
+                <label class="font-medium text-gray-900">City</label>
+                <input
+                  name="city"
+                  type="text"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                  placeholder="City"
+                />
+              </div>
+              <div class="w-1/2">
+                <label class="font-medium text-gray-900">State</label>
+                <select
+                  name="state"
+                  type="text"
+                  class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
+                  data-primary="blue-600"
+                  data-rounded="rounded-lg"
+                >
+                  <option selected="" disabled="" hidden="">
+                    Select State
+                  </option>
+                  <option value="AN">Andaman and Nicobar Islands</option>
+                  <option value="AP">Andhra Pradesh</option>
+                  <option value="AR">Arunachal Pradesh</option>
+                  <option value="AS">Assam</option>
+                  <option value="BR">Bihar</option>
+                  <option value="CH">Chandigarh</option>
+                  <option value="CT">Chhattisgarh</option>
+                  <option value="DN">Dadra and Nagar Haveli</option>
+                  <option value="DD">Daman and Diu</option>
+                  <option value="DL">Delhi</option>
+                  <option value="GA">Goa</option>
+                  <option value="GJ">Gujarat</option>
+                  <option value="HR">Haryana</option>
+                  <option value="HP">Himachal Pradesh</option>
+                  <option value="JK">Jammu and Kashmir</option>
+                  <option value="JH">Jharkhand</option>
+                  <option value="KA">Karnataka</option>
+                  <option value="KL">Kerala</option>
+                  <option value="LA">Ladakh</option>
+                  <option value="LD">Lakshadweep</option>
+                  <option value="MP">Madhya Pradesh</option>
+                  <option value="MH">Maharashtra</option>
+                  <option value="MN">Manipur</option>
+                  <option value="ML">Meghalaya</option>
+                  <option value="MZ">Mizoram</option>
+                  <option value="NL">Nagaland</option>
+                  <option value="OR">Odisha</option>
+                  <option value="PY">Puducherry</option>
+                  <option value="PB">Punjab</option>
+                  <option value="RJ">Rajasthan</option>
+                  <option value="SK">Sikkim</option>
+                  <option value="TN">Tamil Nadu</option>
+                  <option value="TG">Telangana</option>
+                  <option value="TR">Tripura</option>
+                  <option value="UP">Uttar Pradesh</option>
+                  <option value="UT">Uttarakhand</option>
+                  <option value="WB">West Bengal</option>
+                </select>
+              </div>
+            </div>
+
+              <button
+                type="submit"
+                class="inline-block w-full px-5 py-4 text-xl font-medium text-center text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-gray-700 ease"
+                data-primary="blue-600"
+                data-rounded="rounded-lg" onclick="payClick();"
+                >Checkout</button
+              >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% if payment %}
+       
+<form  action="{% url 'success' payment.id %}" method="POST" class="w-full flex items-center justify-center">{% csrf_token %}
+  
+<button id="rzp-button1" class="hidden">Pay</button>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_1zE4jRy2JKhcJq", // Enter the Key ID generated from the Dashboard
+    "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "T-comm",
+    "description": "The Ultimate Shopping Destination.",
+    "image": "",
+    "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        window.location.replace(window.location.origin+"/success/{{payment.id}}/");
+    },
+    "prefill": {
+        "name": "{{name}}",
+        "email": "{{email}}",
+        "contact": "{{mobile}}"
+    },
+    "notes": {
+        "address": "{{address}}"
+    },
+    "theme": {
+        "color": "#007fff"
+    }
+};
+
+const payBtn = document.querySelector('#rzp-button1')
+
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        window.location.replace(window.location.origin+"/failed/");
+});
+payBtn.onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+
+const autoClick = ()=>{
+  document.getElementById('rzp-button1').click()
+}
+autoClick()
+let hidden_input = document.querySelector("#postinput")
+hidden_input.value = JSON.stringify(Razorpay)
+
+
+</script>
+</form>
+
+{% endif %}
+{%endblock body%}
