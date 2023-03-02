@@ -4,6 +4,7 @@ from accounts.models import User
 from django.contrib import messages
 import razorpay
 from django.views.generic.list import ListView
+from decouple import config
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -36,7 +37,7 @@ def checkout(request):
             cart_product = cart_item.product.id
             product = Product.objects.get(id=cart_product)
             price = cart_item.product.price
-            client = razorpay.Client(auth = ("rzp_test_1zE4jRy2JKhcJq","j6Jv36KmPOlJMB7YQIbbrz4Y"))
+            client = razorpay.Client(auth = (config("RZP_KEY"),config("RZP_SECRET")))
             payment = client.order.create({'amount':price*100, 'currency':"INR",'payment_capture':'1'})
 
             order = Order.objects.create(
